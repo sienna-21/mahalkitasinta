@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand:wght@300;400;500;600&family=Marcellus&family=Allura&display=swap');
+
+@layer base {
+  :root {
+    --background: 20 25% 96%;
+    --foreground: 350 20% 18%;
+
+    --card: 30 40% 97%;
+    --card-foreground: 350 20% 18%;
+
+    --popover: 30 40% 97%;
+    --popover-foreground: 350 20% 18%;
+
+    --primary: 345 55% 60%;
+    --primary-foreground: 30 30% 98%;
+
+    --secondary: 25 35% 92%;
+    --secondary-foreground: 350 20% 22%;
+
+    --muted: 25 20% 93%;
+    --muted-foreground: 350 12% 40%;
+
+    --accent: 345 40% 72%;
+    --accent-foreground: 350 20% 18%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 345 20% 85%;
+    --input: 345 20% 85%;
+    --ring: 345 55% 60%;
+
+    --radius: 1rem;
+
+    /* Custom romantic tokens */
+    --blush: 345 60% 82%;
+    --rose: 345 50% 55%;
+    --cream: 35 45% 94%;
+    --warm-white: 30 35% 97%;
+    --soft-coral: 12 65% 72%;
+    --sage: 145 30% 68%;
+    --deep-rose: 345 45% 42%;
+    --parchment: 40 50% 92%;
+    --ink: 345 30% 25%;
+
+    /* Gradients */
+    --gradient-romantic: linear-gradient(135deg, hsl(345 50% 94%) 0%, hsl(30 45% 96%) 50%, hsl(345 40% 90%) 100%);
+    --gradient-blush: linear-gradient(180deg, hsl(345 55% 95%) 0%, hsl(30 40% 96%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(30 45% 96%) 0%, hsl(345 45% 92%) 100%);
+    --gradient-paper: linear-gradient(180deg, hsl(40 50% 94%) 0%, hsl(35 45% 90%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 25px -4px hsl(345 35% 65% / 0.25);
+    --shadow-card: 0 10px 40px -10px hsl(345 35% 55% / 0.2);
+    --shadow-glow: 0 0 40px hsl(345 55% 70% / 0.35);
+    --shadow-photo: 0 8px 30px -6px hsl(0 0% 0% / 0.25);
+
+    /* Fonts */
+    --font-handwritten: 'Allura', cursive;
+    --font-elegant: 'Marcellus', serif;
+    --font-body: 'Quicksand', sans-serif;
+    --font-script: 'Sacramento', cursive;
+  }
+
+  .dark {
+    --background: 345 15% 8%;
+    --foreground: 30 30% 94%;
+
+    --card: 345 15% 12%;
+    --card-foreground: 30 30% 94%;
+
+    --popover: 345 15% 12%;
+    --popover-foreground: 30 30% 94%;
+
+    --primary: 345 50% 58%;
+    --primary-foreground: 345 15% 10%;
+
+    --secondary: 345 15% 18%;
+    --secondary-foreground: 30 30% 94%;
+
+    --muted: 345 12% 20%;
+    --muted-foreground: 30 18% 62%;
+
+    --accent: 345 35% 35%;
+    --accent-foreground: 30 30% 94%;
+
+    --border: 345 15% 20%;
+    --input: 345 15% 20%;
+    --ring: 345 50% 58%;
+
+    --blush: 345 45% 38%;
+    --rose: 345 40% 48%;
+    --cream: 35 18% 14%;
+    --warm-white: 30 12% 12%;
+    --soft-coral: 12 45% 42%;
+    --sage: 145 18% 32%;
+    --deep-rose: 345 40% 52%;
+    --parchment: 40 20% 18%;
+    --ink: 345 20% 75%;
+
+    --gradient-romantic: linear-gradient(135deg, hsl(345 20% 12%) 0%, hsl(30 15% 10%) 50%, hsl(345 15% 14%) 100%);
+    --gradient-blush: linear-gradient(180deg, hsl(345 15% 10%) 0%, hsl(30 12% 12%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(30 15% 10%) 0%, hsl(345 18% 14%) 100%);
+    --gradient-paper: linear-gradient(180deg, hsl(40 20% 16%) 0%, hsl(35 18% 14%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-romantic);
+    min-height: 100vh;
+    font-family: var(--font-body);
+  }
+}
+
+@layer components {
+  .font-handwritten {
+    font-family: var(--font-handwritten);
+  }
+
+  .font-elegant {
+    font-family: var(--font-elegant);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-script {
+    font-family: var(--font-script);
+  }
+
+  .romantic-card {
+    @apply bg-card rounded-2xl p-6;
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(10px);
+  }
+
+  .photo-frame {
+    @apply bg-card rounded-sm overflow-hidden;
+    box-shadow: var(--shadow-photo);
+    padding: 8px 8px 24px 8px;
+  }
+
+  .paper-letter {
+    background: var(--gradient-paper);
+    box-shadow: var(--shadow-card);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--rose)) 0%, hsl(var(--deep-rose)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float 5s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 4s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  .animate-spin-slow {
+    animation: spin 10s linear infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2.5s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out forwards;
+  }
+
+  .animate-sway {
+    animation: sway 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.03); }
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scale-in {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes sway {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+
+  @keyframes drip {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(10px) scale(0.75); opacity: 0.5; }
+  }
+
+  .animate-drip {
+    animation: drip 2.5s ease-in-out infinite;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.4; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  .animate-twinkle {
+    animation: twinkle 2s ease-in-out infinite;
+  }
+}
