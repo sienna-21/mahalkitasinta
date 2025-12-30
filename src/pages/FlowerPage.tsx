@@ -1,7 +1,7 @@
 import React from 'react';
 import BackButton from '@/components/BackButton';
 import AestheticStickers from '@/components/decorations/AestheticStickers';
-import hibiscusImage from '@/assets/hibiscus.png';
+import hibiscusImage from '@/assets/hibiscus.jpg';
 
 const FlowerPage: React.FC = () => {
   const funFacts = [
