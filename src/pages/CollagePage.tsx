@@ -1,12 +1,12 @@
 import React from 'react';
 import BackButton from '@/components/BackButton';
 import AestheticStickers from '@/components/decorations/AestheticStickers';
-import photo1 from '@/assets/photo1.jpg';
-import photo2 from '@/assets/photo2.jpg';
-import photo3 from '@/assets/photo3.jpg';
-import photo4 from '@/assets/photo4.jpg';
-import photo5 from '@/assets/photo5.jpg';
-import photo6 from '@/assets/photo6.jpg';
+import photo1 from '@/assets/gf1.jpg';
+import photo2 from '@/assets/gf2.jpg';
+import photo3 from '@/assets/gf3.jpg';
+import photo4 from '@/assets/gf4.jpg';
+import photo5 from '@/assets/gf5.jpg';
+import photo6 from '@/assets/gf6.jpg';
 
 const CollagePage: React.FC = () => {
   // Photos positioned around the edges, not overlapping center
